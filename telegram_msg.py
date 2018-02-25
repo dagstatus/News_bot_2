@@ -27,7 +27,7 @@ def check_new_news(db_connect):
 
 def main():
     db_connect = sqlite3.connect(Config.DB_PATH)
-    Grabber.main(db_connect)
+    Grabber.main()
     if check_new_news(db_connect)>0:
         News_message(db_connect)
     db_connect.commit()
