@@ -2,9 +2,8 @@
 import sqlite3
 import Config
 import telepot
-import codecs
 import Grabber
-import time
+
 
 
 def News_message(db_connect):

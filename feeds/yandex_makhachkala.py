@@ -22,7 +22,6 @@ class YandexMakhachkalaFeed(BaseFeed):
 		for child in root[0].findall('item'):
 			entries.append({
 				'link': self.parse_link(child.find('link').text),
-				'description': child.find('description').text,
 				'title': child.find('title').text,
 			})
 
