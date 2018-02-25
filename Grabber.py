@@ -38,7 +38,7 @@ def add_news_to_bd():
     news_full = update_news('https://news.yandex.ru/Makhachkala/index.rss', 'item description')
     links = cler_links(update_news('https://news.yandex.ru/Makhachkala/index.rss', 'item guid'))
 
-    connect_bd = sqlite3.connect('BD/NEWS_BD.db')
+    connect_bd = sqlite3.connect('News_bot_2/BD/NEWS_BD.db')
     # Открываем базу
     cursor = connect_bd.cursor()
 
