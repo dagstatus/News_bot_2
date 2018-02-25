@@ -1,6 +1,7 @@
 from urllib  import parse
 from xml.etree import ElementTree 
 import requests
+import datetime
 
 from .base_feed import BaseFeed
 
@@ -23,6 +24,7 @@ class YandexMakhachkalaFeed(BaseFeed):
 			entries.append({
 				'link': self.parse_link(child.find('link').text),
 				'title': child.find('title').text,
+				'date_news': datetime.date.today()
 			})
 
 		self.entries = entries

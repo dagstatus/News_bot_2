@@ -4,8 +4,8 @@ from feeds import YandexMakhachkalaFeed
 from Config import feeds_args, DB_PATH
 
 
-def main(db_connect):
-    # db_connect = sqlite3.connect(DB_PATH)
+def main():
+    db_connect = sqlite3.connect(DB_PATH)
     feeds = [
         YandexMakhachkalaFeed(feeds_args['YandexMakhachkala']['url'], db_connect)
     ]
