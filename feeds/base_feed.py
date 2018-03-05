@@ -22,7 +22,7 @@ class BaseFeed:
 			return
 
 		for entry in self.entries:
-			self.c.execute("""select count(*) from News where link=:link""", {"link":entry['link']})
+			self.c.execute("""select count(*) from News where title=:title""", {"title":entry['title']})
 			if self.c.fetchone()[0] > 0:
 				continue
 			self.c.execute("""insert into News (title,link,date_news) values (:title,:link,:date_news)""", entry)
