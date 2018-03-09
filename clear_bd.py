@@ -12,7 +12,7 @@ def clear_bd ():
     for _id, date_news in cursor.fetchall():
         date_news=datetime.datetime.strptime(date_news,'%Y-%m-%d')
         delta=date_now-date_news.date()
-        if (delta.days>1):
+        if (delta.days>7):
             print('delete old news where id=', _id)
             cursor.execute("""Delete from News where ID=:ID""", {"ID": _id})
     connect_bd.commit()
